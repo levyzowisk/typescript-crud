@@ -16,10 +16,10 @@ datasource db {
 model faq {
   id String @id @default(uuid())
   question String @db.Text()
-  answer String @db.Text()
+  answer String? @db.Text()
   author String
   questionCreatedAt DateTime @default(now())
-  answerCreatedAt DateTime
-  font String
-  status Boolean
+  answerCreatedAt DateTime?
+  font String?
+  status Boolean?
 }

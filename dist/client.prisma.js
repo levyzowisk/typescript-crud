@@ -11,7 +11,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Prisma = void 0;
 const client_1 = require("@prisma/client");
-// const prisma = new PrismaClient();
 class Prisma {
     constructor() {
         this.prisma = new client_1.PrismaClient();

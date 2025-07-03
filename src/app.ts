@@ -14,8 +14,8 @@ export class SetupApplication {
     constructor(private port = 3000, public app = express()) {}
 
     public init(): void {
-        this.setupRoutes();
         this.setupExpress();
+        this.setupRoutes();
     }
 
     private setupClasses () {
@@ -32,7 +32,7 @@ export class SetupApplication {
     }
 
     private setupExpress(): void {
-        this.app.use(json())
+        this.app.use(express.json())
         this.app.use(GlobalError.handle())
     }   
 

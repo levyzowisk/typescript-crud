@@ -15,9 +15,24 @@ class FaqRepository {
     constructor(prisma = new client_prisma_1.Prisma) {
         this.prisma = prisma;
     }
-    create(data) {
+    createQuestion(data) {
         return __awaiter(this, void 0, void 0, function* () {
             return (yield this.prisma.connection()).faq.create({ data });
+        });
+    }
+    delete(id) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return (yield this.prisma.connection()).faq.delete({ where: { id } });
+        });
+    }
+    findById(id) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return (yield this.prisma.connection()).faq.findUnique({ where: { id } });
+        });
+    }
+    findAll() {
+        return __awaiter(this, void 0, void 0, function* () {
+            return (yield this.prisma.connection()).faq.findMany();
         });
     }
 }

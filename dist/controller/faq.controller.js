@@ -14,10 +14,24 @@ class FaqController {
     constructor(faqService) {
         this.faqService = faqService;
     }
-    create(req, res) {
+    createQuestion(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield this.faqService.create(req.body);
+            yield this.faqService.createQuestion(req.body);
             res.status(201).json();
+            return;
+        });
+    }
+    delete(req, res, next) {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield this.faqService.delete(req.params.id);
+            res.status(200).json('Usuário deletado com sucesso!');
+            return;
+        });
+    }
+    findAll(req, res, next) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const data = yield this.faqService.findAll();
+            res.status(200).json(data);
         });
     }
 }

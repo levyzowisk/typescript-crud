@@ -47,8 +47,8 @@ class SetupApplication {
         this.app = app;
     }
     init() {
-        this.setupRoutes();
         this.setupExpress();
+        this.setupRoutes();
     }
     setupClasses() {
     }
@@ -61,7 +61,7 @@ class SetupApplication {
         this.app.use(routes.define((0, express_1.Router)()));
     }
     setupExpress() {
-        this.app.use((0, express_1.json)());
+        this.app.use(express_1.default.json());
         this.app.use(globalError_1.GlobalError.handle());
     }
     start() {

@@ -1,17 +1,10 @@
+import { IsNotEmpty } from 'class-validator';
+
 export class  CreateUserDto {
-    id: string
-    
+    @IsNotEmpty()   
     question: string
 
-    answer: string
-
+    @IsNotEmpty()
     author: string
 
-    questionCreatedAt: Date
-
-    answerCreatedAt: Date
-
-    font: string
-
-    status: boolean
 }

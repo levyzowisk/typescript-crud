@@ -9,6 +9,8 @@ export class ErrorHandler extends Error {
     }
 
     sendErrorResponse(res: Response) {
-        res.status(this.statusCode).json(this.message);
+        console.log(this.message);
+        
+        res.status(this.statusCode).json({message: this.message});
     }
 }

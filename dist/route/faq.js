@@ -9,11 +9,10 @@ class FaqRoute {
         // this.setupRoutes();
         this.create();
     }
-    // private setupRoutes() {
-    //     this.router.post('/', this.faqController.create.bind(this.faqController))
-    // }
     create() {
-        this.router.post('/', this.faqController.create.bind(this.faqController));
+        this.router.post('/', this.faqController.createQuestion.bind(this.faqController));
+        this.router.delete('/:id', this.faqController.delete.bind(this.faqController));
+        this.router.get('/', this.faqController.findAll.bind(this.faqController));
     }
     getRoutes() {
         return this.router;

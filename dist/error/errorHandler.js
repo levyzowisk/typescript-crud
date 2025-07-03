@@ -7,7 +7,8 @@ class ErrorHandler extends Error {
         this.statusCode = statusCode;
     }
     sendErrorResponse(res) {
-        res.status(this.statusCode).json(this.message);
+        console.log(this.message);
+        res.status(this.statusCode).json({ message: this.message });
     }
 }
 exports.ErrorHandler = ErrorHandler;
